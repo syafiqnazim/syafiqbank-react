@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import HomePage from "./pages/homePage";
+import AccountsPage from "./pages/accountsPage";
+import EditAccount from "./pages/editAccount";
+import EditProfile from "./pages/editProfile";
+import AddTransaction from "./pages/addTransaction";
+import Transactions from "./pages/transactions";
+import AddCustomer from "./pages/addCustomer";
+import AddAccount from "./pages/addAccount";
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/accounts" component={AccountsPage} />
+          <Route exact path="/editprofile" component={EditProfile} />
+          <Route exact path="/editaccount" component={EditAccount} />
+          <Route exact path="/transactions" component={Transactions} />
+          <Route exact path="/addcustomer" component={AddCustomer} />
+          <Route exact path="/addaccount" component={AddAccount} />
+          <Route exact path="/addtransaction" component={AddTransaction} />
+        </Switch>
+      </Router>
+    );
+  }
 }
-
-export default App;
