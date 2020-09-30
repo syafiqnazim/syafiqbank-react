@@ -31,6 +31,7 @@ export default class Transactions extends Component {
           var time = newDate.toLocaleTimeString();
           const actual = date + " " + utils.tConvert(time);
           return {
+            transactionId: data.transactionId,
             transactionType: data.transactionType,
             accountNumber: data.accountNumber,
             amount: data.amount,
@@ -74,7 +75,13 @@ export default class Transactions extends Component {
         </div>
         <DetailsTable
           data={this.state.data}
-          headers={["transactionType", "accountNumber", "amount", "createdAt"]}
+          headers={[
+            "transactionId",
+            "transactionType",
+            "accountNumber",
+            "amount",
+            "createdAt",
+          ]}
           rows={4}
         />
       </div>
