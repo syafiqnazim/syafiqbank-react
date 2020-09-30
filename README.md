@@ -10,7 +10,7 @@ Make sure that you already run the backend on your localhost first before runnin
 
 After cloning this project, open your terminal and run these codes:-
 
-`
+```
 
 # Install dependencies for server
 
@@ -22,7 +22,7 @@ npm start
 
 # Client runs on http://localhost:3000
 
-`
+```
 
 ## App Info
 
